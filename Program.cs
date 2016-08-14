@@ -11,14 +11,19 @@ namespace ConsoleSnake
         static void Main(string[] args)
         {
 
+            HorizontalLine hline = new HorizontalLine(1, 10, 1, '+');
+            hline.Drow();
+
+            VerticalLine vline = new VerticalLine(1, 10, 1, '+');
+            vline.Drow();
+
             List<char> CharList = new List<char>();
             CharList.Add('*');
             CharList.Add('#');
             CharList.Add('@');
             CharList.Add('$');
 
-                Point p1 = new Point(1, 3, CharList[0]);
-                //p1.Draw();
+                Point p1 = new Point(2, 3, CharList[0]);
                 Point p2 = new Point(4, 5, CharList[1]);
                 Point p3 = new Point(6, 8, CharList[2]);
                 Point p4 = new Point(10, 13, CharList[3]);
