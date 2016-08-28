@@ -10,12 +10,18 @@ namespace ConsoleSnake
     {
         static void Main(string[] args)
         {
+            Console.SetBufferSize( 120, 30 );
 
-            HorizontalLine hline = new HorizontalLine(1, 10, 1, '+');
-            hline.Drow();
 
-            VerticalLine vline = new VerticalLine(1, 10, 1, '+');
-            vline.Drow();
+
+            HorizontalLine upline = new HorizontalLine(0, 118, 0, '+');
+            upline.Drow();
+            HorizontalLine downline = new HorizontalLine(0, 118, 29, '+');
+            downline.Drow();
+            VerticalLine leftline = new VerticalLine(0, 29, 0, '+');
+            leftline.Drow();
+            VerticalLine rightline = new VerticalLine(0, 29, 118, '+');
+            rightline.Drow();
 
             List<char> CharList = new List<char>();
             CharList.Add('*');
@@ -23,21 +29,8 @@ namespace ConsoleSnake
             CharList.Add('@');
             CharList.Add('$');
 
-                Point p1 = new Point(2, 3, CharList[0]);
-                Point p2 = new Point(4, 5, CharList[1]);
-                Point p3 = new Point(6, 8, CharList[2]);
-                Point p4 = new Point(10, 13, CharList[3]);
-
-            List<Point> PointList = new List<Point>();
-            PointList.Add(p1);
-            PointList.Add(p2);
-            PointList.Add(p3);
-            PointList.Add(p4);
-
-            foreach(Point i in PointList)
-            {
-                i.Draw();
-            }
+            Point p = new Point(4, 5, '*');
+            p.Draw();
 
             Console.ReadLine();
         }
