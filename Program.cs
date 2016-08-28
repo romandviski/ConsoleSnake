@@ -30,7 +30,8 @@ namespace ConsoleSnake
             {
                 if(walls.IsHit(snake) || snake.IsHitTail())
                 {
-                    break;
+                    WriteGameOver();
+                    Console.ReadLine();
                 }
                 if(snake.Eat(food))
                 {
@@ -49,7 +50,28 @@ namespace ConsoleSnake
                 }
             }
 
-            //Console.ReadLine();
+        }
+
+
+        static void WriteGameOver()
+        {
+            int xOffset = 47;
+            int yOffset = 12;
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.SetCursorPosition(xOffset, yOffset++);
+            WriteText("============================", xOffset, yOffset++);
+            WriteText("И Г Р А    О К О Н Ч Е Н А", xOffset + 1, yOffset++);
+            yOffset++;
+            WriteText("Автор: Михаил Ефремов", xOffset + 2, yOffset++);
+            //WriteText("Специально для GeekBrains", xOffset + 1, yOffset++);
+            WriteText("============================", xOffset, yOffset++);
+        }
+
+        static void WriteText(String text, int xOffset, int yOffset)
+        {
+            Console.SetCursorPosition(xOffset, yOffset);
+            Console.WriteLine(text);
         }
     }
-}
+    }
+
