@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace ConsoleSnake
 {
-    class VerticalLine
+    class VerticalLine : Figure
     {
-        List<Point> PList;
-
         public VerticalLine(int yTop, int yDown, int x, char sym)
         {
             PList = new List<Point>();
@@ -19,16 +17,5 @@ namespace ConsoleSnake
                 PList.Add(p);
             }
         }
-
-        public void Drow()
-        {
-            foreach (Point p in PList)
-            {
-                p.Draw();
-            }
-        }
-
-
-
     }
 }
