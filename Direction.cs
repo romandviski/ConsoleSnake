@@ -8,9 +8,9 @@ namespace ConsoleSnake
 {
     enum Direction
     {
-        LEFT;
-        RIGHT;
-        UP;
-        DOWN;  
+        LEFT,
+        RIGHT,
+        UP,
+        DOWN
     }
 }
