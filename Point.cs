@@ -51,6 +51,12 @@ namespace ConsoleSnake
             }
         }
 
+        public void Clear()
+        {
+            sym = ' ';
+            Draw();
+        }
+
         public void Draw()
         {
             Console.SetCursorPosition(x, y);
