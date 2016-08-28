@@ -23,14 +23,9 @@ namespace ConsoleSnake
             VerticalLine rightline = new VerticalLine(0, 29, 118, '+');
             rightline.Drow();
 
-            List<char> CharList = new List<char>();
-            CharList.Add('*');
-            CharList.Add('#');
-            CharList.Add('@');
-            CharList.Add('$');
-
             Point p = new Point(4, 5, '*');
-            p.Draw();
+            Snake snake = new Snake(p, 4, Direction.RIGHT);
+            snake.Drow();
 
             Console.ReadLine();
         }
