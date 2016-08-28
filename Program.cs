@@ -13,16 +13,10 @@ namespace ConsoleSnake
             Console.SetBufferSize( 120, 30 );
             Console.WriteLine("Нажмите enter, чтобы начать");
             Console.ReadLine();
+            Walls walls = new Walls(120, 30);
+            walls.Drow();
 
 
-            HorizontalLine upline = new HorizontalLine(0, 118, 0, '+');
-            upline.Drow();
-            HorizontalLine downline = new HorizontalLine(0, 118, 29, '+');
-            downline.Drow();
-            VerticalLine leftline = new VerticalLine(0, 29, 0, '+');
-            leftline.Drow();
-            VerticalLine rightline = new VerticalLine(0, 29, 118, '+');
-            rightline.Drow();
 
             Point p = new Point(4, 5, '*');
             Snake snake = new Snake(p, 4, Direction.RIGHT);
@@ -34,6 +28,10 @@ namespace ConsoleSnake
 
             while(true)
             {
+                if(walls.IsHit(snake) || snake.IsHitTail())
+                {
+                    break;
+                }
                 if(snake.Eat(food))
                 {
                     food = foodCreator.CreateFood();

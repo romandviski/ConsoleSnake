@@ -66,5 +66,16 @@ namespace ConsoleSnake
                 return false;
           
         }
+
+        internal bool IsHitTail()
+        {
+            var head = PList.Last();
+            for(int i = 0; i < PList.Count - 2;i++)
+            {
+                if (head.IsHit(PList[i]))
+                    return true;
+            }
+            return false;
+        }
     }
 }

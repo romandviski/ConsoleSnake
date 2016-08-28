@@ -9,7 +9,8 @@ namespace ConsoleSnake
     class Figure
     {
         protected List<Point> PList;
-        public void Drow()
+
+        public virtual void Drow()
         {
             foreach (Point p in PList)
             {
@@ -17,5 +18,24 @@ namespace ConsoleSnake
             }
         }
 
+        internal bool IsHit(Figure figure)
+        {
+            foreach (var p in PList)
+            {
+                if (figure.IsHit(p))
+                    return true;
+            }
+            return false;
+        }
+
+        private bool IsHit(Point point)
+        {
+            foreach (var p in PList)
+            {
+                if (p.IsHit(point))
+                    return true;
+            }
+            return false;
+        }
     }
 }
